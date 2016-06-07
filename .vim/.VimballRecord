@@ -1,0 +1,1 @@
+screen.vba: call delete('/home/caoi/.vim/autoload/screen.vim')|call delete('/home/caoi/.vim/doc/screen.txt')|call delete('/home/caoi/.vim/plugin/screen.vim')
