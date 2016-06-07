@@ -7,19 +7,19 @@ setopt EXTENDED_GLOB
 
 # Check for the proper files
 echo "Checking for the proper files..."
-if [ -e './.zprezto' ]
+if [[ -e './.zprezto' ]]
 then
   echo "Found .zprezto."
   echo "Linking files."
-  for rcfile in "${ZDOTDIR:-$HOME}"./.zprezto/runcoms/^README.md(.N); do
+  for rcfile in "${0:A}"./.zprezto/runcoms/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
-  if [ -e './.vim' && -e './.vimrc' ]
+  if [[ -e './.vim' && -e './.vimrc' ]]
   then
     echo "Found Vim files."
     echo "Linking."
-    ln -s "./.vim" "${ZDOTDIR:-$HOME}/.vim"
-    ln -s "./.vimrc" "${ZDOTDIR:-$HOME}/.vimrc"
+    ln -s "${0:A}/.vim" "${ZDOTDIR:-$HOME}/.vim"
+    ln -s "${0:A}/.vimrc" "${ZDOTDIR:-$HOME}/.vimrc"
   else
     echo "Vim files not done. Exiting."
     exit 1
