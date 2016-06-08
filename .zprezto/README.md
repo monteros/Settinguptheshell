@@ -29,11 +29,10 @@ version is 4.3.17.
   3. Create a new Zsh configuration by copying the Zsh configuration files
      provided. To avoid errors, start zsh in your terminal.:
 
-        $ zsh
-        $ setopt EXTENDED_GLOB
-          for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-            ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-          done
+        setopt EXTENDED_GLOB
+        for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+          ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+        done
 
   4. Set Zsh as your default shell:
 
@@ -53,9 +52,9 @@ I've fixed the installation instructions above to cover the common issues with i
 > $ setopt EXTENDED_GLOB
 > bash: setopt: command not found
 
-Basically, enter a zsh shell before executed the setopt command.
+Basically, enter a zsh shell before executed the setopt command. The original instructions say to do this but it can be missed. I missed it. Just be sure you're in zsh.
 
-Also note that the original author / current maintainer seemed to go out of his way to prevent any good discussion on this issue by directing users from one git comment to the next saying that the issue was covered in issue #365 in a comment in issue #231 (https://github.com/sorin-ionescu/prezto/issues/231) but in issue #365 (https://github.com/sorin-ionescu/prezto/issues/365) he states that issue #365 is a duplicate of issue #231... I don't know how that's helpful. 
+I know it's a silly mistake but the original author / current maintainer seemed to go out of his way to prevent any good discussion on this or related issues by directing users from one git comment to the next saying that the issue was covered in issue #365 in a comment in issue #231 (https://github.com/sorin-ionescu/prezto/issues/231) but in issue #365 (https://github.com/sorin-ionescu/prezto/issues/365) he states that issue #365 is a duplicate of issue #231... I don't know how that's helpful. 
 
 Making someone waste their time debugging something is not useful. It is rather ironic that people install zsh and zprezto are probably looking to make their working environment more efficient and when they get to zprezto they find an arbitrary test of suitability that totally wastes their time.
 
