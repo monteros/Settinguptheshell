@@ -13,7 +13,7 @@ for fd in $zfiles; do
   if [[ -e ${ZDOTDIR:-$HOME}/.$fd ]]
   then
     echo "Backing up ${ZDOTDIR:-$HOME}/.${fd}"
-    mv ${ZDOTDIR:-$HOME}/.$fd ${ZDOTDIR:-$HOME}/.$fd_BAK
+    mv ${ZDOTDIR:-$HOME}/.$fd ${ZDOTDIR:-$HOME}/.$fd"_BAK"
   fi
 done
 
@@ -21,7 +21,7 @@ for fd in $vfiles; do
   if [[ -e ${ZDOTDIR:-$HOME}/.$fd ]]
   then
     echo "Backing up ${ZDOTDIR:-$HOME}/.${fd}"
-    mv ${ZDOTDIR:-$HOME}/.$fd ${ZDOTDIR:-$HOME}/.$fd_BAK
+    mv ${ZDOTDIR:-$HOME}/.$fd ${ZDOTDIR:-$HOME}/.$fd"_BAK"
   fi
 done
 
