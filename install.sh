@@ -10,7 +10,7 @@ setopt EXTENDED_GLOB
 
 echo "Checking for and backing up current config..."
 for fd in $zfiles; do
-  if [[ -e ${ZDOTDIR:-$HOME}/.$fd ]]
+  if [[ -a ${ZDOTDIR:-$HOME}/.$fd ]]
   then
     echo "Backing up ${ZDOTDIR:-$HOME}/.${fd}"
     mv ${ZDOTDIR:-$HOME}/.$fd ${ZDOTDIR:-$HOME}/.$fd"_BAK"
@@ -18,7 +18,7 @@ for fd in $zfiles; do
 done
 
 for fd in $vfiles; do
-  if [[ -e ${ZDOTDIR:-$HOME}/.$fd ]]
+  if [[ -a ${ZDOTDIR:-$HOME}/.$fd ]]
   then
     echo "Backing up ${ZDOTDIR:-$HOME}/.${fd}"
     mv ${ZDOTDIR:-$HOME}/.$fd ${ZDOTDIR:-$HOME}/.$fd"_BAK"
