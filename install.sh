@@ -38,7 +38,7 @@ then
   if [[ -e $PWD/.vim && -e $PWD/.vimrc ]]
   then
     echo "ln -s ${PWD}/.vim ${ZDOTDIR:-$HOME}/.vim"
-    ln -s "$PWD/.vim {ZDOTDIR:-$HOME}/.vim"
+    ln -s $PWD/.vim "${ZDOTDIR:-$HOME}/.vim"
     echo "ln -s ${PWD}/.vimrc ${ZDOTDIR:-$HOME}/.vimrc"
     ln -s $PWD/.vimrc "${ZDOTDIR:-$HOME}/.vimrc"
   else
